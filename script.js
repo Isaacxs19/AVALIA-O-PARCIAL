@@ -1,0 +1,44 @@
+let reservedKeys = [];
+let selectedKey = null;
+let messageElement = document.getElementById('message');
+
+function reserveKey() {
+    const name = document.getElementById('name').value;
+    const keyElement = document.getElementById(selectedKey);
+
+    if (!name) {
+        showMessage("Por favor, insira seu nome.");
+        return;
+    }
+
+    if (!selectedKey) {
+        showMessage("Por favor, escolha uma chave.");
+        return;
+    }
+
+    if (reservedKeys.includes(selectedKey)) {
+        showMessage("Esta chave já foi reservada por outra pessoa.");
+        return;
+    }
+
+    reservedKeys.push(selectedKey);
+    keyElement.classList.add('reserved');
+    keyElement.innerText = name;
+    showMessage(`Chave ${selectedKey} reservada para ${name}.`);
+}
+
+function selectKey(key) {
+    if (selectedKey) {
+        document.getElementById(selectedKey).classList.remove('selected');
+    }
+    selectedKey = key;
+    document.getElementById(key).classList.add('selected');
+    showMessage(`Chave ${key} selecionada.`);
+}
+
+function showMessage(message) {
+    messageElement.innerText = message;
+    setTimeout(() => {
+        messageElement.innerText = 'chave reservada';
+    }, 3000);
+}
