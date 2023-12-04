@@ -1,0 +1,81 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Estilos para a Área de Mensagem */
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+/* Estilos para o Formulário */
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    margin: 5px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Estilos para as Chaves */
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.key-container {
+    margin: 5px;
+}
+
+.key {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.key.reserved {
+    background-color: #ffcccb;
+    pointer-events: none;
+}
+
+.key.selected {
+    background-color: #add8e6;
+}
